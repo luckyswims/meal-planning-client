@@ -12,6 +12,49 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+      <header>
+        <h1>Lucky's Meal Planner</h1>
+      </header>
+      <nav class="navbar justify-content-start">
+        <button id="nav-home" class="nav-item">Home</button>
+        <button id="nav-register" class="nav-item">Register</button>
+        <button id="nav-login" class="nav-item">Login</button>
+        <button id="nav-password" class="nav-item hidden">Change Password</button>
+        <button id="nav-logout" class="nav-item hidden">Logout</button>
+      </nav>
+      <main>
+        <p id="auth-message" class="message"></p>
+        <form id="sign-up" class="hidden">
+          <fieldset>
+            <legend>Sign up!</legend>
+            <p>This site only uses your email address to uniquely identify you, so
+              feel free to make one up.</p>
+            <p>Please do not reuse a password you use
+              on other sites.</p>
+            <input type="text" name="credentials[email]" placeholder="name@domain.com">
+            <input type="password" name="credentials[password]" placeholder="Password">
+            <input type="password" name="credentials[password_confirmation]" placeholder="Confirm password">
+            <input type="submit" value="Sign up!">
+          </fieldset>
+        </form>
+
+        <form id="sign-in" class="hidden">
+          <fieldset>
+            <legend>Sign in!</legend>
+            <input type="text" name="credentials[email]" placeholder="name@domain.com">
+            <input type="password" name="credentials[password]" placeholder="Password">
+            <input type="submit" value="Sign in!">
+          </fieldset>
+        </form>
+
+        <form id="change-password" class="hidden">
+          <fieldset>
+            <legend>Change your password</legend>
+            <input type="password" name="passwords[old]" placeholder="Old Password">
+            <input type="password" name="passwords[new]" placeholder="New password">
+            <input type="submit" value="Submit">
+          </fieldset>
+        </form>
+      </main>
     </body>
 </html>
