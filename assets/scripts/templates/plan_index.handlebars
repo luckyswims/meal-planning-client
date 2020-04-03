@@ -1,17 +1,6 @@
 {{#each plans as |plan|}}
   <section id="meal-plan{{plan.id}}" data-id="{{plan.id}}">
-    <h2>Name: {{plan.name}}</h2>
-    <div class="container">
-      <div>{{plan.meal1}}</div>
-      <div>{{plan.meal2}}</div>
-      <div>{{plan.meal3}}</div>
-      <div>{{plan.meal4}}</div>
-      <div>{{plan.meal5}}</div>
-      <div>{{plan.meal6}}</div>
-      <div>{{plan.meal7}}</div>
-    </div>
-    <button class="plan-edit-button" data-id="{{plan.id}}">Edit</button>
-    <button class="plan-delete-button" data-id="{{plan.id}}">Delete</button>
+    {{>plan_show plan=plan}}
   </section>
 
 {{/each}}

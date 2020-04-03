@@ -25,4 +25,5 @@ $(() => {
   $('#resources').on('click', '#index-meal-plan', planEvents.onIndexMealPlan)
   $('#resources').on('click', '.plan-delete-button', planEvents.onDeleteMealPlan)
   $('#resources').on('click', '.plan-edit-button', planEvents.onEditMealPlan)
+  $('#resources').on('submit', '.edit-meal-plan', planEvents.onUpdateMealPlan)
 })

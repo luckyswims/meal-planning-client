@@ -4,6 +4,7 @@ const store = require('../store')
 const newPlanTemplate = require('../templates/plan_form.handlebars')
 const indexPlanTemplate = require('../templates/plan_index.handlebars')
 const editPlanTemplate = require('../templates/plan_edit_form.handlebars')
+const showPlanTemplate = require('../templates/plan_show.handlebars')
 
 const newPlanForm = () => {
   const planFormHTML = newPlanTemplate({})
@@ -50,6 +51,12 @@ const editMealPlan = id => {
   $(`#meal-plan${id}`).html(editPlanHTML)
 }
 
+const updateMealPlanSuccess = data => {
+  console.log(data)
+  const showPlanHTML = showPlanTemplate({ plan: data.meal_plan })
+  $(`#meal-plan${data.meal_plan.id}`).html(showPlanHTML)
+}
+
 module.exports = {
   newPlanForm,
   newMealPlanSuccess,
@@ -58,5 +65,6 @@ module.exports = {
   indexMealPlanFailure,
   deleteMealPlanSuccess,
   deleteMealPlanFailure,
-  editMealPlan
+  editMealPlan,
+  updateMealPlanSuccess
 }

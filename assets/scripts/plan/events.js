@@ -38,10 +38,20 @@ const onEditMealPlan = event => {
   ui.editMealPlan(id)
 }
 
+const onUpdateMealPlan = event => {
+  event.preventDefault()
+  const id = $(event.target).data('id')
+  const data = getFormFields(event.target)
+  api.updateMealPlan(id, data)
+    .then(ui.updateMealPlanSuccess)
+    .catch(ui.updateMealPlanFailure)
+}
+
 module.exports = {
   onNewPlanForm,
   onNewMealPlan,
   onIndexMealPlan,
   onDeleteMealPlan,
-  onEditMealPlan
+  onEditMealPlan,
+  onUpdateMealPlan
 }
