@@ -1,6 +1,9 @@
 'use strict'
+
+const store = require('../store')
 const newPlanTemplate = require('../templates/plan_form.handlebars')
 const indexPlanTemplate = require('../templates/plan_index.handlebars')
+const editPlanTemplate = require('../templates/plan_edit_form.handlebars')
 
 const newPlanForm = () => {
   const planFormHTML = newPlanTemplate({})
@@ -20,8 +23,8 @@ const newMealPlanFailure = error => {
 
 const indexMealPlanSuccess = data => {
   console.log(data.meal_plans)
+  store.meal_plans = data.meal_plans
   const indexPlanHTML = indexPlanTemplate({ plans: data.meal_plans })
-  console.log(indexPlanHTML)
   $('#resource-view').html(indexPlanHTML)
   $('#user-message').text('Meal Plans Retrieved')
 }
@@ -31,10 +34,29 @@ const indexMealPlanFailure = error => {
   $('#game-message').text('Error. You meal plans could not be retrieved.')
 }
 
+const deleteMealPlanSuccess = id => {
+  $(`#meal-plan${id}`).remove()
+  $('#user-message').text('Meal Plan Deleted')
+}
+
+const deleteMealPlanFailure = error => {
+  console.log('deleteMealPlanFailure error is: ', error)
+  $('#user-message').text('Error. You meal plans could not be deleted.')
+}
+
+const editMealPlan = id => {
+  const targetPlan = store.meal_plans.find(plan => plan.id === id)
+  const editPlanHTML = editPlanTemplate({ plan: targetPlan })
+  $(`#meal-plan${id}`).html(editPlanHTML)
+}
+
 module.exports = {
   newPlanForm,
   newMealPlanSuccess,
   newMealPlanFailure,
   indexMealPlanSuccess,
-  indexMealPlanFailure
+  indexMealPlanFailure,
+  deleteMealPlanSuccess,
+  deleteMealPlanFailure,
+  editMealPlan
 }

@@ -9,6 +9,7 @@ const showView = name => {
 const buildView = nameObject => {
   const viewHTML = resourceViewTemplate({ names: nameObject })
   $('#resources').html(viewHTML)
+  $('#resources').removeClass('hidden')
 }
 
 module.exports = {

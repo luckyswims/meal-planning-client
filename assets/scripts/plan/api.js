@@ -24,7 +24,18 @@ const indexMealPlan = () => {
   })
 }
 
+const deleteMealPlan = (id) => {
+  return $.ajax({
+    url: config.apiUrl + '/meal_plans/' + id,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   newMealPlan,
-  indexMealPlan
+  indexMealPlan,
+  deleteMealPlan
 }

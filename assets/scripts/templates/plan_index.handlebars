@@ -1,7 +1,6 @@
 {{#each plans as |plan|}}
-  {{log plan}}
   <section id="meal-plan{{plan.id}}" data-id="{{plan.id}}">
-    <h2>Name: "{{plan.name}}"</h2>
+    <h2>Name: {{plan.name}}</h2>
     <div class="container">
       <div>{{plan.meal1}}</div>
       <div>{{plan.meal2}}</div>
@@ -11,8 +10,8 @@
       <div>{{plan.meal6}}</div>
       <div>{{plan.meal7}}</div>
     </div>
-    <button class="edit-button" data-id="{{plan.id}}">Edit</button>
-    <button class="delete-button" data-id="{{plan.id}}">Delete</button>
+    <button class="plan-edit-button" data-id="{{plan.id}}">Edit</button>
+    <button class="plan-delete-button" data-id="{{plan.id}}">Delete</button>
   </section>
 
 {{/each}}

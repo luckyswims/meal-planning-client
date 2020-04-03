@@ -5,6 +5,7 @@ const ui = require('./ui')
 const hideViews = () => {
   $('article').addClass('hidden')
   $('form').addClass('hidden')
+  $('section').addClass('hidden')
   $('.message').text('')
   $('.message').addClass('hidden')
 }

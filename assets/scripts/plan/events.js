@@ -24,8 +24,24 @@ const onIndexMealPlan = event => {
     .catch(ui.indexMealPlanFailure)
 }
 
+const onDeleteMealPlan = event => {
+  event.preventDefault()
+  const id = $(event.target).data('id')
+  api.deleteMealPlan(id)
+    .then(() => { ui.deleteMealPlanSuccess(id) })
+    .catch(ui.deleteMealPlanFailure)
+}
+
+const onEditMealPlan = event => {
+  event.preventDefault()
+  const id = $(event.target).data('id')
+  ui.editMealPlan(id)
+}
+
 module.exports = {
   onNewPlanForm,
   onNewMealPlan,
-  onIndexMealPlan
+  onIndexMealPlan,
+  onDeleteMealPlan,
+  onEditMealPlan
 }
