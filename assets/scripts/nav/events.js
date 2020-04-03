@@ -28,9 +28,15 @@ const onPasswordNav = () => {
   ui.showView('change-password')
 }
 
+const onMealPlansNav = () => {
+  hideViews()
+  ui.buildView('Meal Plan')
+}
+
 module.exports = {
   onHomeNav,
   onRegisterNav,
   onLoginNav,
-  onPasswordNav
+  onPasswordNav,
+  onMealPlansNav
 }

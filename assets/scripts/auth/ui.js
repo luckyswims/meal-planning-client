@@ -36,7 +36,7 @@ const signInSuccess = function (data) {
   $('#auth-message').text('Signed in successfully')
   success()
   clearForm('sign-in')
-  $('nav > .hidden').removeClass('hidden')
+  $('nav > .nav > .hidden').removeClass('hidden')
   $('#nav-login').addClass('hidden')
   $('#nav-register').addClass('hidden')
   store.user = data.user

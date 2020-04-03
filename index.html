@@ -16,11 +16,26 @@
         <h1>Lucky's Meal Planner</h1>
       </header>
       <nav class="navbar justify-content-start">
-        <button id="nav-home" class="nav-item">Home</button>
-        <button id="nav-register" class="nav-item">Register</button>
-        <button id="nav-login" class="nav-item">Login</button>
-        <button id="nav-password" class="nav-item hidden">Change Password</button>
-        <button id="nav-logout" class="nav-item hidden">Logout</button>
+        <ul class="nav nav-pills">
+          <li id="nav-home" class="nav-item">
+            <a class="nav-link">Home</a>
+          </li>
+          <li id="nav-register" class="nav-item">
+            <a class="nav-link">Register</a>
+          </li>
+          <li id="nav-login" class="nav-item">
+            <a class="nav-link">Login</a>
+          </li>
+          <li id="nav-meal-plans" class="nav-item hidden">
+            <a class="nav-link">Meal Plans</a>
+          </li>
+          <li id="nav-password" class="nav-item hidden">
+            <a class="nav-link">Change Password</a>
+          </li>
+          <li id="nav-logout" class="nav-item hidden">
+            <a class="nav-link">Logout</a>
+          </li>
+        </ul>
       </nav>
       <main>
         <p id="auth-message" class="message"></p>
@@ -55,6 +70,8 @@
             <input type="submit" value="Submit">
           </fieldset>
         </form>
+        <section id="resources">
+        </section>
       </main>
     </body>
 </html>
