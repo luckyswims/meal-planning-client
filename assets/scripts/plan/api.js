@@ -14,6 +14,17 @@ const newMealPlan = data => {
   })
 }
 
+const indexMealPlan = () => {
+  return $.ajax({
+    url: config.apiUrl + '/meal_plans',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
-  newMealPlan
+  newMealPlan,
+  indexMealPlan
 }

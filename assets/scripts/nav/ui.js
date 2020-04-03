@@ -6,8 +6,8 @@ const showView = name => {
   $(`#${name}`).removeClass('hidden')
 }
 
-const buildView = name => {
-  const viewHTML = resourceViewTemplate({ resource: name })
+const buildView = nameObject => {
+  const viewHTML = resourceViewTemplate({ names: nameObject })
   $('#resources').html(viewHTML)
 }
 

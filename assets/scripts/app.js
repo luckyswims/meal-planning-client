@@ -20,6 +20,7 @@ $(() => {
   $('#sign-up').on('submit', authEvents.onSignUp)
   $('#sign-in').on('submit', authEvents.onSignIn)
   $('#change-password').on('submit', authEvents.onChangePassword)
-  $('#resources').on('click', '#new-resource', planEvents.onNewPlanForm)
+  $('#resources').on('click', '#create-meal-plan', planEvents.onNewPlanForm)
   $('#resources').on('submit', '#new-meal-plan', planEvents.onNewMealPlan)
+  $('#resources').on('click', '#index-meal-plan', planEvents.onIndexMealPlan)
 })

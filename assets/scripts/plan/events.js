@@ -17,7 +17,15 @@ const onNewMealPlan = event => {
     .catch(ui.newMealPlanFailure)
 }
 
+const onIndexMealPlan = event => {
+  event.preventDefault()
+  api.indexMealPlan()
+    .then(ui.indexMealPlanSuccess)
+    .catch(ui.indexMealPlanFailure)
+}
+
 module.exports = {
   onNewPlanForm,
-  onNewMealPlan
+  onNewMealPlan,
+  onIndexMealPlan
 }
