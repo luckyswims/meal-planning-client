@@ -14,7 +14,6 @@ const newPlanForm = () => {
 
 const newMealPlanSuccess = data => {
   $('#resource-form').empty()
-  console.log(data)
   $('#user-message').text('Meal Plan Created')
 }
 
@@ -24,7 +23,6 @@ const newMealPlanFailure = error => {
 }
 
 const indexMealPlanSuccess = data => {
-  console.log(data.meal_plans)
   store.meal_plans = data.meal_plans
   const indexPlanHTML = indexPlanTemplate({ plans: data.meal_plans })
   $('#resource-view').html(indexPlanHTML)
@@ -53,7 +51,6 @@ const editMealPlan = id => {
 }
 
 const updateMealPlanSuccess = data => {
-  console.log(data)
   const showPlanHTML = showPlanTemplate({ plan: data.meal_plan })
   $(`#meal-plan${data.meal_plan.id}`).html(showPlanHTML)
 }

@@ -15,10 +15,7 @@ const buildView = nameObject => {
 }
 
 const showHome = () => {
-  console.log('nav ui')
-  console.log(store)
   const homePageHTML = homePageTemplate({ store })
-  console.log(homePageHTML)
   $('#instructions').html(homePageHTML)
   $('#instructions').removeClass('hidden')
 }
