@@ -1,6 +1,7 @@
 'use strict'
 
 const store = require('../store')
+const navUi = require('../nav/ui')
 
 const clearForm = formID => {
   $(`#${formID}`)[0].reset()
@@ -39,7 +40,9 @@ const signInSuccess = function (data) {
   $('nav > .nav > .hidden').removeClass('hidden')
   $('#nav-login').addClass('hidden')
   $('#nav-register').addClass('hidden')
+  store.isSignedIn = true
   store.user = data.user
+  navUi.showHome()
 }
 
 const signInFailure = function (error) {
@@ -64,14 +67,17 @@ const changePasswordFailure = function (error) {
 }
 
 const signOutSuccess = function (data) {
-  $('nav > button').addClass('hidden')
+  $('nav .nav-item').addClass('hidden')
   $('#nav-home').removeClass('hidden')
   $('#nav-login').removeClass('hidden')
   $('#nav-register').removeClass('hidden')
+  $('article').addClass('hidden')
   $('form').addClass('hidden')
+  $('section').addClass('hidden')
   $('.message').addClass('hidden')
   $('.message').text('')
   $('#user-message').text('Signed Out')
+  store.isSignedIn = false
   success()
 }
 

@@ -12,6 +12,8 @@ const hideViews = () => {
 
 const onHomeNav = () => {
   hideViews()
+  console.log('nav events')
+  ui.showHome()
 }
 
 const onRegisterNav = () => {
