@@ -1,18 +1,19 @@
 'use strict'
 
 const store = require('../store')
-const newPlanTemplate = require('../templates/plan_form.handlebars')
+const newPlanTemplate = require('../templates/plan_new_form.handlebars')
 const indexPlanTemplate = require('../templates/plan_index.handlebars')
 const editPlanTemplate = require('../templates/plan_edit_form.handlebars')
 const showPlanTemplate = require('../templates/plan_show.handlebars')
+const findPlanTemplate = require('../templates/plan_find_form.handlebars')
 
 const newPlanForm = () => {
   const planFormHTML = newPlanTemplate({})
-  $('#new-resource-form').html(planFormHTML)
+  $('#resource-form').html(planFormHTML)
 }
 
 const newMealPlanSuccess = data => {
-  $('#new-resource-form').empty()
+  $('#resource-form').empty()
   console.log(data)
   $('#user-message').text('Meal Plan Created')
 }
@@ -57,6 +58,18 @@ const updateMealPlanSuccess = data => {
   $(`#meal-plan${data.meal_plan.id}`).html(showPlanHTML)
 }
 
+const findMealPlan = () => {
+  const findPlanHTML = findPlanTemplate({})
+  $('#resource-form').html(findPlanHTML)
+}
+
+const findPlanFormSuccess = (data, target) => {
+  store.meal_plans = data.meal_plans
+  const results = data.meal_plans.filter(mealPlan => mealPlan.name.includes(target))
+  const findPlanResultHTML = indexPlanTemplate({ plans: results })
+  $('#resource-view').html(findPlanResultHTML)
+}
+
 module.exports = {
   newPlanForm,
   newMealPlanSuccess,
@@ -66,5 +79,7 @@ module.exports = {
   deleteMealPlanSuccess,
   deleteMealPlanFailure,
   editMealPlan,
-  updateMealPlanSuccess
+  updateMealPlanSuccess,
+  findMealPlan,
+  findPlanFormSuccess
 }

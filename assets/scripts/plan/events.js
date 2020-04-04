@@ -47,11 +47,26 @@ const onUpdateMealPlan = event => {
     .catch(ui.updateMealPlanFailure)
 }
 
+const onFindMealPlan = event => {
+  event.preventDefault()
+  ui.findMealPlan()
+}
+
+const onFindPlanForm = event => {
+  event.preventDefault()
+  const target = $(event.target).find('#meal-plan-name').val()
+  api.indexMealPlan()
+    .then(data => ui.findPlanFormSuccess(data, target))
+    .catch(ui.findPlanFormFail)
+}
+
 module.exports = {
   onNewPlanForm,
   onNewMealPlan,
   onIndexMealPlan,
   onDeleteMealPlan,
   onEditMealPlan,
-  onUpdateMealPlan
+  onUpdateMealPlan,
+  onFindMealPlan,
+  onFindPlanForm
 }
