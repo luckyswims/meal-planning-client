@@ -57,7 +57,7 @@ const onFindPlanForm = event => {
   const target = $(event.target).find('#meal-plan-name').val()
   api.indexMealPlan()
     .then(data => ui.findPlanFormSuccess(data, target))
-    .catch(ui.findPlanFormFail)
+    .catch(ui.findPlanFormFailure)
 }
 
 module.exports = {
