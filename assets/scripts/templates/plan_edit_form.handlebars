@@ -1,14 +1,38 @@
 <form class="edit-meal-plan" data-id="{{plan.id}}">
-  <fieldset class="d-flex flex-column">
-    <h2>Current Name: {{plan.name}}</h2>
-    <input type="text" name="meal_plan[name]" value="{{plan.name}}">
-    <input type="text" name="meal_plan[meal1]" value="{{plan.meal1}}">
-    <input type="text" name="meal_plan[meal2]" value="{{plan.meal2}}">
-    <input type="text" name="meal_plan[meal3]" value="{{plan.meal3}}">
-    <input type="text" name="meal_plan[meal4]" value="{{plan.meal4}}">
-    <input type="text" name="meal_plan[meal5]" value="{{plan.meal5}}">
-    <input type="text" name="meal_plan[meal6]" value="{{plan.meal6}}">
-    <input type="text" name="meal_plan[meal7]" value="{{plan.meal7}}">
+  <fieldset class="container flex-column">
+    <legend>Current Name: {{plan.name}}</legend>
+    <div>
+      <label for="meal-plan-name">Plan Name</label>
+      <input type="text" name="meal_plan[name]" value="{{plan.name}}">
+    </div>
+    <div>
+      <label for="meal1">Meal 1</label>
+      <input type="text" id="meal1" name="meal_plan[meal1]" value="{{plan.meal1}}">
+    </div>
+    <div>
+      <label for="meal2">Meal 2</label>
+      <input type="text" id="meal2" name="meal_plan[meal2]" value="{{plan.meal2}}">
+    </div>
+    <div>
+      <label for="meal3">Meal 3</label>
+      <input type="text" id="meal3" name="meal_plan[meal3]" value="{{plan.meal3}}">
+    </div>
+    <div>
+      <label for="meal4">Meal 4</label>
+      <input type="text" id="meal4" name="meal_plan[meal4]" value="{{plan.meal4}}">
+    </div>
+    <div>
+      <label for="meal5">Meal 5</label>
+      <input type="text" id="meal5" name="meal_plan[meal5]" value="{{plan.meal5}}">
+    </div>
+    <div>
+      <label for="meal6">Meal 6</label>
+      <input type="text" id="meal6" name="meal_plan[meal6]" value="{{plan.meal6}}">
+    </div>
+    <div>
+      <label for="meal7">Meal 7</label>
+      <input type="text" id="meal7" name="meal_plan[meal7]" value="{{plan.meal7}}">
+    </div>
     <input type="submit" value="Submit">
   </fieldset>
 </form>

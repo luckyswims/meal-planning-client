@@ -1,14 +1,38 @@
 <form id="new-meal-plan">
-  <fieldset>
+  <fieldset class="d-flex flex-column">
     <legend>Create a new Meal Plan</legend>
-    <input type="text" name="meal_plan[name]" placeholder="Plan Name">
-    <input type="text" name="meal_plan[meal1]" placeholder="Meal 1 Name">
-    <input type="text" name="meal_plan[meal2]" placeholder="Meal 2 Name">
-    <input type="text" name="meal_plan[meal3]" placeholder="Meal 3 Name">
-    <input type="text" name="meal_plan[meal4]" placeholder="Meal 4 Name">
-    <input type="text" name="meal_plan[meal5]" placeholder="Meal 5 Name">
-    <input type="text" name="meal_plan[meal6]" placeholder="Meal 6 Name">
-    <input type="text" name="meal_plan[meal7]" placeholder="Meal 7 Name">
+    <div>
+      <label for="meal-plan-name">Plan Name</label>
+      <input type="text" name="meal_plan[name]" placeholder="Plan Name">
+    </div>
+    <div>
+      <label for="meal1">Meal 1</label>
+      <input type="text" id="meal1" name="meal_plan[meal1]" placeholder="Meal 1 Name">
+    </div>
+    <div>
+      <label for="meal2">Meal 2</label>
+      <input type="text" id="meal2" name="meal_plan[meal2]" placeholder="Meal 2 Name">
+    </div>
+    <div>
+      <label for="meal3">Meal 3</label>
+      <input type="text" id="meal3" name="meal_plan[meal3]" placeholder="Meal 3 Name">
+    </div>
+    <div>
+      <label for="meal4">Meal 4</label>
+      <input type="text" id="meal4" name="meal_plan[meal4]" placeholder="Meal 4 Name">
+    </div>
+    <div>
+      <label for="meal5">Meal 5</label>
+      <input type="text" id="meal5" name="meal_plan[meal5]" placeholder="Meal 5 Name">
+    </div>
+    <div>
+      <label for="meal6">Meal 6</label>
+      <input type="text" id="meal6" name="meal_plan[meal6]" placeholder="Meal 6 Name">
+    </div>
+    <div>
+      <label for="meal7">Meal 7</label>
+      <input type="text" id="meal7" name="meal_plan[meal7]" placeholder="Meal 7 Name">
+    </div>
     <input type="submit" value="Submit">
   </fieldset>
 </form>
