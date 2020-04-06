@@ -1,5 +1,103 @@
 @import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville&display=swap');
+
+$font-color: #070707;
+$nav-font-color: #78d5d7;
+$background-color: #f7f9f9;
+$accent-color: #63d2ff;
+$ui-color: #2081c3;
+$warning-font-color: #dc493a;
+$success-font-color: #00d897;
+
+body {
+  background-color: $background-color;
+  color: $font-color;
+  font-family: 'Libre Baskerville', serif;
+}
+
+nav {
+  background-color: $accent-color;
+
+  &.navbar {
+    padding: 0;
+  }
+
+  .nav-link {
+    background-color: $accent-color;
+    border-width: 0;
+    color: $font-color;
+    margin: 5px;
+    padding: 0 8px;
+
+    &:hover {
+      color: $background-color;
+    }
+  }
+
+  .dropdown-menu {
+    background-color: $accent-color;
+    margin: 0;
+    min-width: 0;
+    padding: 0;
+
+    .dropdown-item {
+      margin: 5px;
+      padding: 0 8px;
+      width: auto;
+
+      &:hover {
+        background-color: $accent-color;
+        color: $background-color;
+      }
+    }
+  }
+}
+
+article {
+  align-self: center;
+  max-width: 800px;
+}
+
+.resource {
+  text-align: left;
+}
 
 .hidden {
   display: none;
+}
+
+.message {
+  margin: 8px 0;
+}
+
+.success {
+  color: $success-font-color;
+}
+
+.failure {
+  color: $warning-font-color;
+}
+
+.new-meal-plan {
+  align-self: center;
+  border: 2px solid $font-color;
+  margin: 5px;
+  padding: 10px;
+
+  label {
+    width: 80px;
+  }
+}
+
+.meal-plan {
+  border: 2px solid $font-color;
+  margin: 5px;
+  padding: 10px;
+  width: 350px;
+}
+
+.edit-meal-plan {
+  label {
+    width: 80px;
+  }
 }

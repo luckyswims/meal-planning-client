@@ -4,8 +4,8 @@ const ui = require('./ui')
 
 const hideViews = () => {
   $('article').addClass('hidden')
-  $('form').addClass('hidden')
-  $('section').addClass('hidden')
+  $('.auth-form').addClass('hidden')
+  $('#resources').addClass('hidden')
   $('.message').text('')
   $('.message').addClass('hidden')
 }
@@ -32,10 +32,7 @@ const onPasswordNav = () => {
 
 const onMealPlansNav = () => {
   hideViews()
-  ui.buildView({
-    display: 'Meal Plan',
-    path: 'meal-plan'
-  })
+  ui.showView('resources')
 }
 
 module.exports = {
