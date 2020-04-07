@@ -107,8 +107,11 @@ I ultimately decided to implement the search in the client, and setup the result
 to be displayed using the same Handlebars template as the "List Meal Plans". This
 meant that users could edit or delete a resource from the "Find Meal Plan" page.
 
-At this point I then moved on to styling the project to give it a more professional
-appearance.
+Originally, I had intended to have a sidebar on the meal plans view that would
+show the user a number of their meal plans, that they could then click on to show
+the specific meal plan. Once I had the initial layout finished, I decided that
+that wouldn't be a priority as the tools I had already created for navigating a
+user's meal plans were effective.
 
 ## To Do list
 - Add meals resource to the client  
@@ -118,6 +121,7 @@ appearance.
 - Update the search function to perform search on the API side instead of in the
 client  
 - Add UI to run shopping list API function and display the results
+- Add side panel to show a selection of the resource the user is looking at
 
 [Deployed API]: https://luckys-meal-planning-api.herokuapp.com
 [Deployed Client]: https://luckyswims.github.io/meal-planning-client/
