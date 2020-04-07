@@ -1,14 +1,14 @@
 # Meal Planning Client
 
 ## Technologies Used
--HTML  
--Handlebars  
--CSS  
--SCSS  
--Bootstrap  
--JavaScript  
--jQuery  
--AJAX  
+- HTML  
+- Handlebars  
+- CSS  
+- SCSS  
+- Bootstrap  
+- JavaScript  
+- jQuery  
+- AJAX  
 
 ## About
 This Client was develped for a project during my Software Engineering Immersive at
@@ -111,13 +111,13 @@ At this point I then moved on to styling the project to give it a more professio
 appearance.
 
 ## To Do list
--Add meals resource to the client  
--Update meal plan forms to reference meals  
--Add ingredient amounts to the client  
--Update meal forms to reference ingredient amounts  
--Update the search function to perform search on the API side instead of in the
+- Add meals resource to the client  
+- Update meal plan forms to reference meals  
+- Add ingredient amounts to the client  
+- Update meal forms to reference ingredient amounts  
+- Update the search function to perform search on the API side instead of in the
 client  
--Add UI to run shopping list API function and display the results
+- Add UI to run shopping list API function and display the results
 
 [Deployed API]: https://luckys-meal-planning-api.herokuapp.com
 [Deployed Client]: https://luckyswims.github.io/meal-planning-client/
