@@ -79,7 +79,7 @@ const findMealPlan = () => {
 
 const findPlanFormSuccess = (data, target) => {
   store.meal_plans = data.meal_plans
-  const results = data.meal_plans.filter(mealPlan => mealPlan.name.includes(target))
+  const results = data.meal_plans.filter(mealPlan => mealPlan.name.toLowerCase().includes(target.toLowerCase()))
   const findPlanResultHTML = indexPlanTemplate({ plans: results })
   $('#resource-view').html(findPlanResultHTML)
   $('#user-message').removeClass('hidden')
