@@ -25,8 +25,7 @@ const newMealPlanSuccess = data => {
   $('#user-message').text('Meal Plan Created')
 }
 
-const newMealPlanFailure = error => {
-  console.log('newMealPlanFailure error is: ', error)
+const newMealPlanFailure = () => {
   $('#user-message').removeClass('hidden')
   $('#user-message').text('Error. A new meal plan was unable to be created.')
 }
@@ -40,8 +39,7 @@ const indexMealPlanSuccess = data => {
   $('#user-message').text('Meal Plans Retrieved')
 }
 
-const indexMealPlanFailure = error => {
-  console.log('newMealPlanFailure error is: ', error)
+const indexMealPlanFailure = () => {
   $('#user-message').removeClass('hidden')
   $('#user-message').text('Error. You meal plans could not be retrieved.')
 }
@@ -52,8 +50,7 @@ const deleteMealPlanSuccess = id => {
   $('#user-message').text('Meal Plan Deleted')
 }
 
-const deleteMealPlanFailure = error => {
-  console.log('deleteMealPlanFailure error is: ', error)
+const deleteMealPlanFailure = () => {
   $('#user-message').removeClass('hidden')
   $('#user-message').text('Error. You meal plans could not be deleted.')
 }
@@ -86,8 +83,7 @@ const findPlanFormSuccess = (data, target) => {
   $('#user-message').text('Meal Plans Found')
 }
 
-const findPlanFormFailure = error => {
-  console.log('deleteMealPlanFailure error is: ', error)
+const findPlanFormFailure = () => {
   $('#user-message').removeClass('hidden')
   $('#user-message').text('Error. You meal plans could not be found.')
 }

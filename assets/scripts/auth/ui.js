@@ -26,10 +26,9 @@ const signUpSuccess = function (data) {
   clearForm('sign-up')
 }
 
-const signUpFailure = function (error) {
+const signUpFailure = function () {
   $('#user-message').text('Sign up failed')
   failure()
-  console.log('signUpFailure error is: ', error)
   $('#sign-up')[0].reset()
 }
 
@@ -45,10 +44,9 @@ const signInSuccess = function (data) {
   navUi.showHome()
 }
 
-const signInFailure = function (error) {
+const signInFailure = function () {
   $('#user-message').text('Sign in failed')
   failure()
-  console.log('signInFailure error is: ', error)
   $('#sign-in')[0].reset()
 }
 
@@ -59,10 +57,9 @@ const changePasswordSuccess = function (data) {
   $('#change-password').addClass('hidden')
 }
 
-const changePasswordFailure = function (error) {
+const changePasswordFailure = function () {
   $('#user-message').text('Could not change password')
   failure()
-  console.log('changePasswordFailure error is: ', error)
   $('#change-password')[0].reset()
 }
 
@@ -81,10 +78,9 @@ const signOutSuccess = function (data) {
   success()
 }
 
-const signOutFailure = function (error) {
+const signOutFailure = function () {
   $('#user-message').text('Could not sign out')
   failure()
-  console.log('signOutFailure error is: ', error)
 }
 
 module.exports = {

@@ -15,10 +15,11 @@ This Client was develped for a project during my Software Engineering Immersive 
 General Assembly. The goal was to create a full stack application with resources
 the users could Create, Update, Read, and Delete. For the project I chose to
 create a meal planning application to help users plan out their meals for the
-week. The links to the deployed API and Client are below:
+week. The links to the deployed API, deployed Client, and API repo are below:
 
-[Deployed API]
-[Deployed Client]
+[Deployed API]  
+[Deployed Client]  
+[API Repo]
 
 ## Development
 ### Version 1
