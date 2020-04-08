@@ -135,4 +135,5 @@ client
 
 [Deployed API]: https://luckys-meal-planning-api.herokuapp.com
 [Deployed Client]: https://luckyswims.github.io/meal-planning-client/
+[API Repo]: https://github.com/luckyswims/meal-planning-api
 [Wireframe1]: https://github.com/luckyswims/meal-planning-api/blob/master/images/Initial%20Wireframe.jpeg
