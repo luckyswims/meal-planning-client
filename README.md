@@ -25,8 +25,17 @@ week. The links to the deployed API, deployed Client, and API repo are below:
 ### Version 1
 Once I had finished Version 1 of the API I needed to build a client where users
 could sign-up, sign-in, change password, sign-out, create a meal plan, view 
-their meal plans, update their meal plans, and delete their meal plans. I
-started by creating a wireframe of what I thought I wanted the layout to look
+their meal plans, update their meal plans, and delete their meal plans. I had 
+the following user stories for my client:  
+
+- As a user I want to be able to create a schedule of meals for the week
+- As a recurring user I want to be able to lookup schedules from previous
+weeks in order to reuse them
+- As a busy user I want to be able to change my schedule to account for
+changes in my schedule
+- As a user I want to be able to delete a schedule
+
+I then created a wireframe of what I thought I wanted the layout to look
 like. 
 
 ![Version 1 Wireframe][Wireframe1]
