@@ -80,12 +80,12 @@ const findPlanFormSuccess = (data, target) => {
   const findPlanResultHTML = indexPlanTemplate({ plans: results })
   $('#resource-view').html(findPlanResultHTML)
   $('#user-message').removeClass('hidden')
-  $('#user-message').text('Meal Plans Found')
+  $('#user-message').text('Search completed.')
 }
 
 const findPlanFormFailure = () => {
   $('#user-message').removeClass('hidden')
-  $('#user-message').text('Error. You meal plans could not be found.')
+  $('#user-message').text('Error. Your search could not be performed.')
 }
 
 module.exports = {

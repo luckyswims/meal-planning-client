@@ -1,6 +1,9 @@
-{{#each plans as |plan|}}
-  <section id="meal-plan{{plan.id}}" class="meal-plan" data-id="{{plan.id}}">
-    {{>plan_show plan=plan}}
-  </section>
-
-{{/each}}
+{{#if plans}}
+  {{#each plans as |plan|}}
+    <section id="meal-plan{{plan.id}}" class="meal-plan" data-id="{{plan.id}}">
+      {{>plan_show plan=plan}}
+    </section>
+  {{/each}}
+{{else}}
+  <h4>No Meal Plans were found that matched your search term.</h4>
+{{/if}}

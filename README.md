@@ -124,6 +124,8 @@ that wouldn't be a priority as the tools I had already created for navigating a
 user's meal plans were effective.
 
 ## To Do list
+- ~~Don't allow users to submit empty forms~~
+- ~~Provide better feedback if the user's search does not return any results~~
 - Add meals resource to the client  
 - Update meal plan forms to reference meals  
 - Add ingredient amounts to the client  
