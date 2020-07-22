@@ -1,26 +1,21 @@
 'use strict'
 
 const store = require('../store')
-const newPlanTemplate = require('../templates/plan_new_form.handlebars')
-const indexPlanTemplate = require('../templates/plan_index.handlebars')
-const editPlanTemplate = require('../templates/plan_edit_form.handlebars')
-const showPlanTemplate = require('../templates/plan_show.handlebars')
-const findPlanTemplate = require('../templates/plan_find_form.handlebars')
-
-const clearView = () => {
-  $('#user-message').empty()
-  $('#resource-view').empty()
-  $('#resource-form').empty()
-}
+const utilities = require('../utilities/utilities')
+const newPlanTemplate = require('../templates/plan/plan_new_form.handlebars')
+const indexPlanTemplate = require('../templates/plan/plan_index.handlebars')
+const editPlanTemplate = require('../templates/plan/plan_edit_form.handlebars')
+const showPlanTemplate = require('../templates/plan/plan_show.handlebars')
+const findPlanTemplate = require('../templates/plan/plan_find_form.handlebars')
 
 const newPlanForm = () => {
   const planFormHTML = newPlanTemplate({})
-  clearView()
+  utilities.clearView()
   $('#resource-form').html(planFormHTML)
 }
 
 const newMealPlanSuccess = data => {
-  clearView()
+  utilities.clearView()
   $('#user-message').removeClass('hidden')
   $('#user-message').text('Meal Plan Created')
 }
@@ -33,7 +28,7 @@ const newMealPlanFailure = () => {
 const indexMealPlanSuccess = data => {
   store.meal_plans = data.meal_plans
   const indexPlanHTML = indexPlanTemplate({ plans: data.meal_plans })
-  clearView()
+  utilities.clearView()
   $('#resource-view').html(indexPlanHTML)
   $('#user-message').removeClass('hidden')
   $('#user-message').text('Meal Plans Retrieved')
@@ -68,13 +63,13 @@ const updateMealPlanSuccess = data => {
   $('#user-message').text('Meal Plan Updated')
 }
 
-const findMealPlan = () => {
+const findPlanForm = () => {
   const findPlanHTML = findPlanTemplate({})
-  clearView()
+  utilities.clearView()
   $('#resource-form').html(findPlanHTML)
 }
 
-const findPlanFormSuccess = (data, target) => {
+const findMealPlanSuccess = (data, target) => {
   store.meal_plans = data.meal_plans
   const results = data.meal_plans.filter(mealPlan => mealPlan.name.toLowerCase().includes(target.toLowerCase()))
   const findPlanResultHTML = indexPlanTemplate({ plans: results })
@@ -83,7 +78,7 @@ const findPlanFormSuccess = (data, target) => {
   $('#user-message').text('Search completed.')
 }
 
-const findPlanFormFailure = () => {
+const findMealPlanFailure = () => {
   $('#user-message').removeClass('hidden')
   $('#user-message').text('Error. Your search could not be performed.')
 }
@@ -98,7 +93,7 @@ module.exports = {
   deleteMealPlanFailure,
   editMealPlan,
   updateMealPlanSuccess,
-  findMealPlan,
-  findPlanFormSuccess,
-  findPlanFormFailure
+  findPlanForm,
+  findMealPlanSuccess,
+  findMealPlanFailure
 }

@@ -30,7 +30,7 @@ const onPasswordNav = () => {
   ui.showView('change-password')
 }
 
-const onMealPlansNav = () => {
+const onResourceNav = () => {
   hideViews()
   ui.showView('resources')
 }
@@ -40,5 +40,5 @@ module.exports = {
   onRegisterNav,
   onLoginNav,
   onPasswordNav,
-  onMealPlansNav
+  onResourceNav
 }

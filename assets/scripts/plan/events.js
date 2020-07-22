@@ -47,17 +47,17 @@ const onUpdateMealPlan = event => {
     .catch(ui.updateMealPlanFailure)
 }
 
-const onFindMealPlan = event => {
+const onFindPlanForm = event => {
   event.preventDefault()
-  ui.findMealPlan()
+  ui.findPlanForm()
 }
 
-const onFindPlanForm = event => {
+const onFindMealPlan = event => {
   event.preventDefault()
   const target = $(event.target).find('#meal-plan-name').val()
   api.indexMealPlan()
-    .then(data => ui.findPlanFormSuccess(data, target))
-    .catch(ui.findPlanFormFailure)
+    .then(data => ui.findMealPlanSuccess(data, target))
+    .catch(ui.findMealPlanFailure)
 }
 
 module.exports = {
@@ -67,6 +67,6 @@ module.exports = {
   onDeleteMealPlan,
   onEditMealPlan,
   onUpdateMealPlan,
-  onFindMealPlan,
-  onFindPlanForm
+  onFindPlanForm,
+  onFindMealPlan
 }

@@ -1,0 +1,9 @@
+{{#if meals}}
+  {{#each meals as |meal|}}
+    <section id="meal{{meal.id}}" class="meal" data-id="{{meal.id}}">
+      {{>meal_show meal=meal}}
+    </section>
+  {{/each}}
+{{else}}
+  <h4>No Meals were found that matched your search.</h4>
+{{/if}}

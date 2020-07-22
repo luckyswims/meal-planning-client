@@ -89,11 +89,25 @@ article {
   }
 }
 
+.new-meal {
+  align-self: center;
+  border: 2px solid $font-color;
+  margin: 5px;
+  padding: 10px;
+}
+
 .meal-plan {
   border: 2px solid $font-color;
   margin: 5px;
   padding: 10px;
   width: 375px;
+}
+
+.meal {
+  border: 2px solid $font-color;
+  margin: 5px;
+  padding: 10px;
+  width: 100%;
 }
 
 .edit-meal-plan {

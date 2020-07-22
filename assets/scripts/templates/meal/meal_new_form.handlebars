@@ -1,0 +1,18 @@
+<form id="new-meal" class="new-meal">
+  <fieldset class="d-flex flex-column">
+    <legend>Create a new Meal</legend>
+    <div>
+      <label for="meal-name">Meal Name</label>
+      <input type="text" name="meal[name]" placeholder="Meal Name" required>
+    </div>
+    <div>
+      <label for="time">Time to Make in Minutes</label>
+      <input type="number" id="time" name="meal[time]" placeholder=30>
+    </div>
+    <div>
+      <label for="ingredient_list">List of Ingredients</label>
+      <input type="text" id="ingredient_list" name="meal[ingredient_list]" placeholder="List of Ingredients">
+    </div>
+    <input type="submit" value="Submit">
+  </fieldset>
+</form>
