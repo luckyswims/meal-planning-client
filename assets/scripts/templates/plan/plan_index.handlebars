@@ -1,6 +1,6 @@
 {{#if plans}}
   {{#each plans as |plan|}}
-    <section id="meal-plan{{plan.id}}" class="meal-plan" data-id="{{plan.id}}">
+    <section id="plan{{plan.id}}" class="plan" data-id="{{plan.id}}">
       {{>plan_show plan=plan}}
     </section>
   {{/each}}

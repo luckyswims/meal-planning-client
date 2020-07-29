@@ -5,7 +5,7 @@ const store = require('../store')
 
 const newMealPlan = data => {
   return $.ajax({
-    url: config.apiUrl + '/meal_plans',
+    url: config.apiUrl + '/plans',
     method: 'POST',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -16,7 +16,7 @@ const newMealPlan = data => {
 
 const indexMealPlan = () => {
   return $.ajax({
-    url: config.apiUrl + '/meal_plans',
+    url: config.apiUrl + '/plans',
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -26,7 +26,7 @@ const indexMealPlan = () => {
 
 const deleteMealPlan = id => {
   return $.ajax({
-    url: config.apiUrl + '/meal_plans/' + id,
+    url: config.apiUrl + '/plans/' + id,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -36,7 +36,7 @@ const deleteMealPlan = id => {
 
 const updateMealPlan = (id, data) => {
   return $.ajax({
-    url: config.apiUrl + '/meal_plans/' + id,
+    url: config.apiUrl + '/plans/' + id,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token
