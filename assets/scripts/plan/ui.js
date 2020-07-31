@@ -8,57 +8,58 @@ const editPlanTemplate = require('../templates/plan/plan_edit_form.handlebars')
 const showPlanTemplate = require('../templates/plan/plan_show.handlebars')
 const findPlanTemplate = require('../templates/plan/plan_find_form.handlebars')
 
-const newPlanForm = () => {
-  const planFormHTML = newPlanTemplate({})
+const newPlanForm = (res) => {
+  store.meals = res.meals
+  const planFormHTML = newPlanTemplate({ meals: res.meals })
   utilities.clearView()
   $('#resource-form').html(planFormHTML)
 }
 
-const newMealPlanSuccess = data => {
+const newPlanSuccess = data => {
   utilities.clearView()
   $('#user-message').removeClass('hidden')
   $('#user-message').text('Meal Plan Created')
 }
 
-const newMealPlanFailure = () => {
+const newPlanFailure = () => {
   $('#user-message').removeClass('hidden')
   $('#user-message').text('Error. A new meal plan was unable to be created.')
 }
 
-const indexMealPlanSuccess = data => {
-  store.meal_plans = data.meal_plans
-  const indexPlanHTML = indexPlanTemplate({ plans: data.meal_plans })
+const indexPlanSuccess = data => {
+  store.plans = data.plans
+  const indexPlanHTML = indexPlanTemplate({ plans: data.plans })
   utilities.clearView()
   $('#resource-view').html(indexPlanHTML)
   $('#user-message').removeClass('hidden')
   $('#user-message').text('Meal Plans Retrieved')
 }
 
-const indexMealPlanFailure = () => {
+const indexPlanFailure = () => {
   $('#user-message').removeClass('hidden')
   $('#user-message').text('Error. You meal plans could not be retrieved.')
 }
 
-const deleteMealPlanSuccess = id => {
+const deletePlanSuccess = id => {
   $(`#meal-plan${id}`).remove()
   $('#user-message').removeClass('hidden')
   $('#user-message').text('Meal Plan Deleted')
 }
 
-const deleteMealPlanFailure = () => {
+const deletePlanFailure = () => {
   $('#user-message').removeClass('hidden')
   $('#user-message').text('Error. You meal plans could not be deleted.')
 }
 
-const editMealPlan = id => {
-  const targetPlan = store.meal_plans.find(plan => plan.id === id)
+const editPlan = id => {
+  const targetPlan = store.plans.find(plan => plan.id === id)
   const editPlanHTML = editPlanTemplate({ plan: targetPlan })
   $(`#meal-plan${id}`).html(editPlanHTML)
 }
 
-const updateMealPlanSuccess = data => {
-  const showPlanHTML = showPlanTemplate({ plan: data.meal_plan })
-  $(`#meal-plan${data.meal_plan.id}`).html(showPlanHTML)
+const updatePlanSuccess = data => {
+  const showPlanHTML = showPlanTemplate({ plan: data.plan })
+  $(`#meal-plan${data.plan.id}`).html(showPlanHTML)
   $('#user-message').removeClass('hidden')
   $('#user-message').text('Meal Plan Updated')
 }
@@ -69,31 +70,31 @@ const findPlanForm = () => {
   $('#resource-form').html(findPlanHTML)
 }
 
-const findMealPlanSuccess = (data, target) => {
-  store.meal_plans = data.meal_plans
-  const results = data.meal_plans.filter(mealPlan => mealPlan.name.toLowerCase().includes(target.toLowerCase()))
+const findPlanSuccess = (data, target) => {
+  store.plans = data.plans
+  const results = data.plans.filter(Plan => Plan.name.toLowerCase().includes(target.toLowerCase()))
   const findPlanResultHTML = indexPlanTemplate({ plans: results })
   $('#resource-view').html(findPlanResultHTML)
   $('#user-message').removeClass('hidden')
   $('#user-message').text('Search completed.')
 }
 
-const findMealPlanFailure = () => {
+const findPlanFailure = () => {
   $('#user-message').removeClass('hidden')
   $('#user-message').text('Error. Your search could not be performed.')
 }
 
 module.exports = {
   newPlanForm,
-  newMealPlanSuccess,
-  newMealPlanFailure,
-  indexMealPlanSuccess,
-  indexMealPlanFailure,
-  deleteMealPlanSuccess,
-  deleteMealPlanFailure,
-  editMealPlan,
-  updateMealPlanSuccess,
+  newPlanSuccess,
+  newPlanFailure,
+  indexPlanSuccess,
+  indexPlanFailure,
+  deletePlanSuccess,
+  deletePlanFailure,
+  editPlan,
+  updatePlanSuccess,
   findPlanForm,
-  findMealPlanSuccess,
-  findMealPlanFailure
+  findPlanSuccess,
+  findPlanFailure
 }
