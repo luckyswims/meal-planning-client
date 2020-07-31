@@ -3,7 +3,7 @@
 const config = require('../config')
 const store = require('../store')
 
-const newMealPlan = data => {
+const newPlan = data => {
   return $.ajax({
     url: config.apiUrl + '/plans',
     method: 'POST',
@@ -14,7 +14,7 @@ const newMealPlan = data => {
   })
 }
 
-const indexMealPlan = () => {
+const indexPlan = () => {
   return $.ajax({
     url: config.apiUrl + '/plans',
     method: 'GET',
@@ -24,7 +24,7 @@ const indexMealPlan = () => {
   })
 }
 
-const deleteMealPlan = id => {
+const deletePlan = id => {
   return $.ajax({
     url: config.apiUrl + '/plans/' + id,
     method: 'DELETE',
@@ -34,7 +34,7 @@ const deleteMealPlan = id => {
   })
 }
 
-const updateMealPlan = (id, data) => {
+const updatePlan = (id, data) => {
   return $.ajax({
     url: config.apiUrl + '/plans/' + id,
     method: 'PATCH',
@@ -46,8 +46,8 @@ const updateMealPlan = (id, data) => {
 }
 
 module.exports = {
-  newMealPlan,
-  indexMealPlan,
-  deleteMealPlan,
-  updateMealPlan
+  newPlan,
+  indexPlan,
+  deletePlan,
+  updatePlan
 }
