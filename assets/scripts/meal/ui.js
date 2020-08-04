@@ -2,11 +2,11 @@
 
 const store = require('../store')
 const utilities = require('../utilities/utilities')
-const newMealTemplate = require('../templates/meal/meal_new_form.handlebars')
-const indexMealTemplate = require('../templates/meal/meal_index.handlebars')
-const editMealTemplate = require('../templates/meal/meal_edit_form.handlebars')
-const showMealTemplate = require('../templates/meal/meal_show.handlebars')
-const findMealTemplate = require('../templates/meal/meal_find_form.handlebars')
+const newMealTemplate = require('../templates/meal_new_form.handlebars')
+const indexMealTemplate = require('../templates/meal_index.handlebars')
+const editMealTemplate = require('../templates/meal_edit_form.handlebars')
+const showMealTemplate = require('../templates/meal_show.handlebars')
+const findMealTemplate = require('../templates/meal_find_form.handlebars')
 
 const newMealForm = () => {
   const mealFormHTML = newMealTemplate({})

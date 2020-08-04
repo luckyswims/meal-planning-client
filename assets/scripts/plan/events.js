@@ -9,12 +9,14 @@ const mealApi = require('../meal/api')
 const onNewPlanForm = event => {
   event.preventDefault()
   mealApi.indexMeal()
-    .then(res => ui.newPlanForm(res))
+    .then(res => {
+      store.meals = res.meals
+    })
+    .then(ui.newPlanForm)
 }
 
-const onNewPlan = event => {
-  event.preventDefault()
-  const formData = getFormFields(event.target)
+const getPlanData = form => {
+  const formData = getFormFields(form)
   const name = formData.plan.name
   const keys = Object.keys(formData.plan)
   const mealList = keys.filter(key => key.includes('meal'))
@@ -25,6 +27,11 @@ const onNewPlan = event => {
   const data = {
     plan: { name, meal_ids: mealIds }
   }
+  return data
+}
+const onNewPlan = event => {
+  event.preventDefault()
+  const data = getPlanData(event.target)
   console.log('Data is: ', data)
   api.newPlan(data)
     .then(ui.newPlanSuccess)
@@ -49,7 +56,11 @@ const onDeletePlan = event => {
 const onEditPlan = event => {
   event.preventDefault()
   const id = $(event.target).data('id')
-  ui.editPlan(id)
+  mealApi.indexMeal()
+    .then(res => {
+      store.meals = res.meals
+    })
+    .then(() => { ui.editPlan(id) })
 }
 
 const onUpdatePlan = event => {
@@ -68,7 +79,7 @@ const onFindPlanForm = event => {
 
 const onFindPlan = event => {
   event.preventDefault()
-  const target = $(event.target).find('#meal-plan-name').val()
+  const target = $(event.target).find('#plan-name').val()
   api.indexPlan()
     .then(data => ui.findPlanSuccess(data, target))
     .catch(ui.findPlanFailure)

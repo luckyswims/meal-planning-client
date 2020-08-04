@@ -2,15 +2,14 @@
 
 const store = require('../store')
 const utilities = require('../utilities/utilities')
-const newPlanTemplate = require('../templates/plan/plan_new_form.handlebars')
-const indexPlanTemplate = require('../templates/plan/plan_index.handlebars')
-const editPlanTemplate = require('../templates/plan/plan_edit_form.handlebars')
-const showPlanTemplate = require('../templates/plan/plan_show.handlebars')
-const findPlanTemplate = require('../templates/plan/plan_find_form.handlebars')
+const newPlanTemplate = require('../templates/plan_new_form.handlebars')
+const indexPlanTemplate = require('../templates/plan_index.handlebars')
+const editPlanTemplate = require('../templates/plan_edit_form.handlebars')
+const showPlanTemplate = require('../templates/plan_show.handlebars')
+const findPlanTemplate = require('../templates/plan_find_form.handlebars')
 
-const newPlanForm = (res) => {
-  store.meals = res.meals
-  const planFormHTML = newPlanTemplate({ meals: res.meals })
+const newPlanForm = () => {
+  const planFormHTML = newPlanTemplate({ meals: store.meals })
   utilities.clearView()
   $('#resource-form').html(planFormHTML)
 }
@@ -41,7 +40,7 @@ const indexPlanFailure = () => {
 }
 
 const deletePlanSuccess = id => {
-  $(`#meal-plan${id}`).remove()
+  $(`#plan${id}`).remove()
   $('#user-message').removeClass('hidden')
   $('#user-message').text('Meal Plan Deleted')
 }
@@ -53,13 +52,13 @@ const deletePlanFailure = () => {
 
 const editPlan = id => {
   const targetPlan = store.plans.find(plan => plan.id === id)
-  const editPlanHTML = editPlanTemplate({ plan: targetPlan })
-  $(`#meal-plan${id}`).html(editPlanHTML)
+  const editPlanHTML = editPlanTemplate({ plan: targetPlan, meals: store.meals })
+  $(`#plan${id}`).html(editPlanHTML)
 }
 
 const updatePlanSuccess = data => {
   const showPlanHTML = showPlanTemplate({ plan: data.plan })
-  $(`#meal-plan${data.plan.id}`).html(showPlanHTML)
+  $(`#plan${data.plan.id}`).html(showPlanHTML)
   $('#user-message').removeClass('hidden')
   $('#user-message').text('Meal Plan Updated')
 }

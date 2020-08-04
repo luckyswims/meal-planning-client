@@ -1,0 +1,10 @@
+<h2>Name: {{plan.name}}</h2>
+<div class="container">
+  {{#each plan.meals as |meal|}}
+    <section id="meal{{meal.id}}" class="meal" data-id="{{meal.id}}">
+      {{>meal_show meal=meal}}
+    </section>
+  {{/each}}
+</div>
+<button class="plan-edit-button" data-id="{{plan.id}}">Edit</button>
+<button class="plan-delete-button" data-id="{{plan.id}}">Delete</button>

@@ -1,0 +1,21 @@
+<form class="edit-plan" data-id="{{plan.id}}">
+  <fieldset class="container flex-column">
+    <legend>Current Name: {{plan.name}}</legend>
+    <div>
+      <label for="plan-name">Plan Name</label>
+      <input type="text" name="plan[name]" value="{{plan.name}}" required>
+    </div>
+    {{#each plan.meals as |meal|}}
+      <div>
+        <label for="meal{{listItem @index}}">Meal {{listItem @index}}</label>
+        <input type="text" list="meals" name="plan[meal{{listItem @index}}]" id="meal1" value="{{meal.name}}">
+      </div>
+    {{/each}}
+    <input type="submit" value="Submit">
+  </fieldset>
+  <datalist id="meals">
+    {{#each meals as |meal|}}
+      <option value="{{meal.name}}">
+    {{/each}}
+  </datalist>
+</form>

@@ -3,6 +3,8 @@
     <section id="meal{{meal.id}}" class="meal" data-id="{{meal.id}}">
       {{>meal_show meal=meal}}
     </section>
+    <button class="meal-edit-button" data-id="{{meal.id}}">Edit Meal</button>
+    <button class="meal-delete-button" data-id="{{meal.id}}">Delete Meal</button>
   {{/each}}
 {{else}}
   <h4>No Meals were found that matched your search.</h4>
