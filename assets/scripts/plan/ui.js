@@ -7,6 +7,7 @@ const indexPlanTemplate = require('../templates/plan_index.handlebars')
 const editPlanTemplate = require('../templates/plan_edit_form.handlebars')
 const showPlanTemplate = require('../templates/plan_show.handlebars')
 const findPlanTemplate = require('../templates/plan_find_form.handlebars')
+const planMealInputTemplate = require('../templates/plan_meal_input.handlebars')
 
 const newPlanForm = () => {
   const planFormHTML = newPlanTemplate({ meals: store.meals })
@@ -83,6 +84,13 @@ const findPlanFailure = () => {
   $('#user-message').text('Error. Your search could not be performed.')
 }
 
+const addMeal = id => {
+  const index = $(`#${id} div`).filter(':last').data('index') + 1 || 1
+  console.log(index)
+  const mealInputHTML = planMealInputTemplate({ index })
+  $(`#${id} div`).filter(':last').after(mealInputHTML)
+}
+
 module.exports = {
   newPlanForm,
   newPlanSuccess,
@@ -95,5 +103,6 @@ module.exports = {
   updatePlanSuccess,
   findPlanForm,
   findPlanSuccess,
-  findPlanFailure
+  findPlanFailure,
+  addMeal
 }

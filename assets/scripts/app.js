@@ -30,6 +30,7 @@ $(() => {
   $('#resources').on('click', '.plan-edit-button', planEvents.onEditPlan)
   $('#resources').on('submit', '.edit-plan', planEvents.onUpdatePlan)
   $('#resources').on('submit', '#find-plan-form', planEvents.onFindPlan)
+  $('#resources').on('click', '.add-meal-button', planEvents.onAddMeal)
   $('#create-meal').on('click', mealEvents.onNewMealForm)
   $('#index-meal').on('click', mealEvents.onIndexMeal)
   $('#find-meal').on('click', mealEvents.onFindMealForm)

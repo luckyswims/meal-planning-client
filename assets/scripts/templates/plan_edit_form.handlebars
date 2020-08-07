@@ -1,4 +1,4 @@
-<form class="edit-plan" data-id="{{plan.id}}">
+<form id="plan{{plan.id}}" class="edit-plan" data-id="{{plan.id}}">
   <fieldset class="container flex-column">
     <legend>Current Name: {{plan.name}}</legend>
     <div>
@@ -6,11 +6,12 @@
       <input type="text" name="plan[name]" value="{{plan.name}}" required>
     </div>
     {{#each plan.meals as |meal|}}
-      <div>
+      <div data-index="{{listItem @index}}">
         <label for="meal{{listItem @index}}">Meal {{listItem @index}}</label>
-        <input type="text" list="meals" name="plan[meal{{listItem @index}}]" id="meal1" value="{{meal.name}}">
+        <input type="text" list="meals" name="plan[meal{{listItem @index}}]" value="{{meal.name}}">
       </div>
     {{/each}}
+    <button class="add-meal-button" data-id="plan{{plan.id}}">Add Meal</button>
     <input type="submit" value="Submit">
   </fieldset>
   <datalist id="meals">

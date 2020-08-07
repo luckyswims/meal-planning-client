@@ -1,7 +1,7 @@
 'use strict'
 
 const listItem = (index) => {
-  return index++
+  return index + 1
 }
 
 module.exports = listItem

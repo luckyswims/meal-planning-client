@@ -5,34 +5,11 @@
       <label for="plan-name">Plan Name</label>
       <input type="text" name="plan[name]" placeholder="Plan Name" required>
     </div>
-    <div>
+    <div data-index="1">
       <label for="meal1">Meal 1</label>
       <input type="text" name="plan[meal1]" list="meals">
     </div>
-    <div>
-      <label for="meal2">Meal 2</label>
-      <input type="text" name="plan[meal2]" list="meals">
-    </div>
-    <div>
-      <label for="meal3">Meal 3</label>
-      <input type="text" name="plan[meal3]" list="meals">
-    </div>
-    <div>
-      <label for="meal4">Meal 4</label>
-      <input type="text" name="plan[meal4]" list="meals">
-    </div>
-    <div>
-      <label for="meal5">Meal 5</label>
-      <input type="text" name="plan[meal5]" list="meals">
-    </div>
-    <div>
-      <label for="meal6">Meal 6</label>
-      <input type="text" name="plan[meal6]" list="meals">
-    </div>
-    <div>
-      <label for="meal7">Meal 7</label>
-      <input type="text" name="plan[meal7]" list="meals">
-    </div>
+    <button class="add-meal-button" data-id="new-plan">Add Meal</button>
     <input type="submit" value="Submit">
   </fieldset>
   <datalist id="meals">

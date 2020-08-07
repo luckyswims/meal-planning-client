@@ -85,6 +85,12 @@ const onFindPlan = event => {
     .catch(ui.findPlanFailure)
 }
 
+const onAddMeal = event => {
+  event.preventDefault()
+  const id = $(event.target).data('id')
+  ui.addMeal(id)
+}
+
 module.exports = {
   onNewPlanForm,
   onNewPlan,
@@ -93,5 +99,6 @@ module.exports = {
   onEditPlan,
   onUpdatePlan,
   onFindPlanForm,
-  onFindPlan
+  onFindPlan,
+  onAddMeal
 }
