@@ -1,4 +1,4 @@
-<form class="edit-meal" data-id="{{meal.id}}">
+<form id="meal{{meal.id}}" class="edit-meal" data-id="{{meal.id}}">
   <fieldset class="d-flex flex-column">
     <legend>Current Name: {{meal.name}}</legend>
     <div>
@@ -14,5 +14,6 @@
       <input type="text" id="ingredient_list" name="meal[ingredient_list]" value="{{meal.ingredient_list}}">
     </div>
     <input type="submit" value="Submit">
+    <button class="meal-cancel-edit-button" data-id="meal{{meal.id}}">Cancel</button>
   </fieldset>
 </form>

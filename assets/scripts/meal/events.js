@@ -38,6 +38,12 @@ const onEditMeal = event => {
   ui.editMeal(id)
 }
 
+const onCancelEditMeal = event => {
+  event.preventDefault()
+  const id = $(event.target).data('id')
+  ui.cancelEditMeal(id)
+}
+
 const onUpdateMeal = event => {
   event.preventDefault()
   const id = $(event.target).data('id')
@@ -66,6 +72,7 @@ module.exports = {
   onIndexMeal,
   onDeleteMeal,
   onEditMeal,
+  onCancelEditMeal,
   onUpdateMeal,
   onFindMealForm,
   onFindMeal

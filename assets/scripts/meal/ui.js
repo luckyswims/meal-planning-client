@@ -53,7 +53,13 @@ const deleteMealFailure = () => {
 const editMeal = id => {
   const targetMeal = store.meals.find(meal => meal.id === id)
   const editPlanHTML = editMealTemplate({ meal: targetMeal })
-  $(`#meal${id}`).html(editPlanHTML)
+  $(`#meal${id} .show-meal`).addClass('hidden')
+  $(`#meal${id}`).append(editPlanHTML)
+}
+
+const cancelEditMeal = id => {
+  $(`#${id} .edit-meal`).remove()
+  $(`#${id} .show-meal`).removeClass('hidden')
 }
 
 const updateMealSuccess = data => {
@@ -92,6 +98,7 @@ module.exports = {
   deleteMealSuccess,
   deleteMealFailure,
   editMeal,
+  cancelEditMeal,
   updateMealSuccess,
   findMealForm,
   findMealSuccess,

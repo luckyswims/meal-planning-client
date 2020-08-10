@@ -54,7 +54,13 @@ const deletePlanFailure = () => {
 const editPlan = id => {
   const targetPlan = store.plans.find(plan => plan.id === id)
   const editPlanHTML = editPlanTemplate({ plan: targetPlan, meals: store.meals })
-  $(`#plan${id}`).html(editPlanHTML)
+  $(`#plan${id} .show-plan`).addClass('hidden')
+  $(`#plan${id}`).append(editPlanHTML)
+}
+
+const cancelEditPlan = id => {
+  $(`#${id} .edit-plan`).remove()
+  $(`#${id} .show-plan`).removeClass('hidden')
 }
 
 const updatePlanSuccess = data => {
@@ -104,6 +110,7 @@ module.exports = {
   deletePlanSuccess,
   deletePlanFailure,
   editPlan,
+  cancelEditPlan,
   updatePlanSuccess,
   findPlanForm,
   findPlanSuccess,

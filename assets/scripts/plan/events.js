@@ -63,6 +63,12 @@ const onEditPlan = event => {
     .then(() => { ui.editPlan(id) })
 }
 
+const onCancelEditPlan = event => {
+  event.preventDefault()
+  const id = $(event.target).data('id')
+  ui.cancelEditPlan(id)
+}
+
 const onUpdatePlan = event => {
   event.preventDefault()
   const id = $(event.target).data('id')
@@ -103,6 +109,7 @@ module.exports = {
   onIndexPlan,
   onDeletePlan,
   onEditPlan,
+  onCancelEditPlan,
   onUpdatePlan,
   onFindPlanForm,
   onFindPlan,

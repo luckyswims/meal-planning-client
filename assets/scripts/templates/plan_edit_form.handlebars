@@ -13,7 +13,9 @@
     {{/each}}
     <button class="add-meal-button" data-id="plan{{plan.id}}">Add Meal</button>
     <button class="remove-meal-button" data-id="plan{{plan.id}}">Remove Meal</button>
+    </br>
     <input type="submit" value="Submit">
+    <button class="plan-cancel-edit-button" data-id="plan{{plan.id}}">Cancel</button>
   </fieldset>
   <datalist id="meals">
     {{#each meals as |meal|}}
