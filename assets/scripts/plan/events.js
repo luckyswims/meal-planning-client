@@ -91,6 +91,12 @@ const onAddMeal = event => {
   ui.addMeal(id)
 }
 
+const onRemoveMeal = event => {
+  event.preventDefault()
+  const id = $(event.target).data('id')
+  ui.removeMeal(id)
+}
+
 module.exports = {
   onNewPlanForm,
   onNewPlan,
@@ -100,5 +106,6 @@ module.exports = {
   onUpdatePlan,
   onFindPlanForm,
   onFindPlan,
-  onAddMeal
+  onAddMeal,
+  onRemoveMeal
 }

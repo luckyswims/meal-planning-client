@@ -91,6 +91,10 @@ const addMeal = id => {
   $(`#${id} div`).filter(':last').after(mealInputHTML)
 }
 
+const removeMeal = id => {
+  $(`#${id} div`).filter(':last').remove()
+}
+
 module.exports = {
   newPlanForm,
   newPlanSuccess,
@@ -104,5 +108,6 @@ module.exports = {
   findPlanForm,
   findPlanSuccess,
   findPlanFailure,
-  addMeal
+  addMeal,
+  removeMeal
 }
