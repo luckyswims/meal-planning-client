@@ -1,6 +1,6 @@
 <div class="show-plan">
   <h2>Name: {{plan.name}}</h2>
-  <div class="container">
+  <div class="meal-list">
     {{#each plan.meals as |meal|}}
       <section id="meal{{meal.id}}" class="meal" data-id="{{meal.id}}">
         {{>meal_show meal=meal}}
