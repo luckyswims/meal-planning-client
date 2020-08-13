@@ -32,7 +32,6 @@ const getPlanData = form => {
 const onNewPlan = event => {
   event.preventDefault()
   const data = getPlanData(event.target)
-  console.log('Data is: ', data)
   api.newPlan(data)
     .then(ui.newPlanSuccess)
     .catch(ui.newPlanFailure)
@@ -72,7 +71,7 @@ const onCancelEditPlan = event => {
 const onUpdatePlan = event => {
   event.preventDefault()
   const id = $(event.target).data('id')
-  const data = getFormFields(event.target)
+  const data = getPlanData(event.target)
   api.updatePlan(id, data)
     .then(ui.updatePlanSuccess)
     .catch(ui.updatePlanFailure)

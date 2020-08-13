@@ -92,7 +92,6 @@ const findPlanFailure = () => {
 
 const addMeal = id => {
   const index = $(`#${id} div`).filter(':last').data('index') + 1 || 1
-  console.log(index)
   const mealInputHTML = planMealInputTemplate({ index })
   $(`#${id} div`).filter(':last').after(mealInputHTML)
 }
